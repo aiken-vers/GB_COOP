@@ -110,24 +110,135 @@ public:
             cout << "incorrect denominator" << endl;
         }
     }
-    Fraction operator +(Fraction f2) {
-        Fraction sum(numerator+f2.numerator, denominator+f2.denominator);
-        return sum;
+    void print() {
+        cout << to_string(numerator)<<"/"<<denominator<<endl;
     }
-    Fraction operator -(Fraction f2) {
-        Fraction sum(numerator - f2.numerator, denominator - f2.denominator);
-        return sum;
+
+    friend Fraction operator +(Fraction f1, Fraction f2);
+    friend Fraction operator -(Fraction f1, Fraction f2);
+    friend Fraction operator *(Fraction f1, Fraction f2);
+    friend Fraction operator /(Fraction f1, Fraction f2);
+    friend Fraction operator -(Fraction f1);
+    friend bool operator ==(Fraction f1, Fraction f2);
+    friend bool operator !=(Fraction f1, Fraction f2);
+    friend bool operator >(Fraction f1, Fraction f2);
+    friend bool operator <(Fraction f1, Fraction f2);
+    friend bool operator >=(Fraction f1, Fraction f2);
+    friend bool operator <=(Fraction f1, Fraction f2);
+};
+
+Fraction operator +(Fraction f1, Fraction f2)  {
+    return Fraction(f1.numerator + f2.numerator, f1.denominator);
+}
+Fraction operator -(Fraction f1, Fraction f2) {
+    return Fraction(f1.numerator - f2.numerator, f1.denominator);
+}
+Fraction operator *(Fraction f1, Fraction f2) {
+    return Fraction(f1.numerator * f2.numerator, f1.denominator * f2.denominator);
+}
+Fraction operator /(Fraction f1, Fraction f2) {
+    return Fraction(f1.numerator * f2.denominator, f1.denominator * f2.numerator);
+}
+Fraction operator -(Fraction f1) {
+    return Fraction(-f1.numerator, f1.denominator);
+}
+bool operator ==(Fraction f1, Fraction f2) {
+    if (f1.numerator == f2.numerator && f1.denominator == f2.denominator) {
+        return true;
     }
-    Fraction operator *(Fraction f2) {
-        Fraction sum(numerator * f2.numerator, denominator * f2.denominator);
-        return sum;
+    return false;
+}
+bool operator !=(Fraction f1, Fraction f2) {
+    if (f1.numerator == f2.numerator && f1.denominator == f2.denominator) {
+        return false;
     }
-    Fraction operator /(Fraction f2) {
-        Fraction sum(numerator / f2.numerator, denominator / f2.denominator);
-        return sum;
+    return true;
+}
+bool operator >(Fraction f1, Fraction f2) {
+    if (f1.numerator > f2.numerator) {
+        return true;
+    }
+    return false;
+}
+bool operator <(Fraction f1, Fraction f2) {
+    if (f1.numerator < f2.numerator) {
+        return true;
+    }
+    return false;
+}
+bool operator >=(Fraction f1, Fraction f2) {
+    if (f1 < f2) {
+        return false;
+    }
+    return true;
+}
+bool operator <=(Fraction f1, Fraction f2) {
+    if (f1 > f2) {
+        return false;
+    }
+    return true;
+}
+
+
+#pragma endregion
+
+#pragma region Task4
+#include <list>
+class Data {
+public:
+    static const enum suits {
+        CLUBS,
+        DIAMONDS,
+        HEARTS,
+        SPADES
+    };
+    static const enum ranks {
+        T2,
+        T3,
+        T4,
+        T5,
+        T6,
+        T7,
+        T8,
+        T9,
+        T10,
+        JACK,
+        QUEEN,
+        KING,
+        ACE
+    };
+};
+
+class Card {
+private:
+    Data::suits suit;
+    Data::ranks rank;
+    bool cardUp = false;
+public:
+    Card(Data::suits Suit, Data::ranks Rank) : suit(Suit), rank(Rank)
+    {}
+
+    void Flip() {
+        cardUp = !cardUp;
+    }
+
+    bool isAce() //проверка, является ли карта тузом
+    {}
+    int getValue() // возврат цены карты
+    {
+        if (rank > 8 && rank != 12) {
+            return 10;
+        }
+        if (rank == 12) {
+            return 1;
+        }
+
+        return rank+2;
     }
 };
+
 #pragma endregion
+
 int main()
 {
     //#Task1#=======================================================================
@@ -146,5 +257,11 @@ int main()
     Minivan mini1("Honda", "Odyssey");
     //#Task3#=======================================================================
     cout << endl << "#Task3#==========================================================" << endl;
+    Fraction f1(7, 9);
+    Fraction f2(2, 9);
+    (f1 - f2).print();
+    //#Task4#=======================================================================
+    cout << endl << "#Task4#==========================================================" << endl;
+    Card Spades9(Data::SPADES, Data::T9);
+    cout << "Spades 9 value = " << Spades9.getValue() << endl;
 }
-
