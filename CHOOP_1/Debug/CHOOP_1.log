@@ -1,0 +1,13 @@
+﻿  CHOOP_1.cpp
+C:\Users\1\source\repos\CHOOP_1\CHOOP_1\CHOOP_1.cpp(97,1): error C3867: "PhoneBook::compName": нестандартный синтаксис; используйте "&", чтобы создать указатель на член
+C:\Users\1\source\repos\CHOOP_1\CHOOP_1\CHOOP_1.cpp(97,9): error C2672: "sort": не найдена соответствующая перегруженная функция
+C:\Users\1\source\repos\CHOOP_1\CHOOP_1\CHOOP_1.cpp(97,1): error C2780: void std::sort(_ExPo &&,_RanIt,_RanIt,_Pr) noexcept: требует аргументов: 4, имеется: 3
+E:\Programmes\Visual Studio 2019\Community\VC\Tools\MSVC\14.28.29910\include\algorithm(7525): message : см. объявление "std::sort"
+C:\Users\1\source\repos\CHOOP_1\CHOOP_1\CHOOP_1.cpp(97,1): error C2780: void std::sort(const _RanIt,const _RanIt): требует аргументов: 2, имеется: 3
+E:\Programmes\Visual Studio 2019\Community\VC\Tools\MSVC\14.28.29910\include\algorithm(7519): message : см. объявление "std::sort"
+C:\Users\1\source\repos\CHOOP_1\CHOOP_1\CHOOP_1.cpp(101,1): error C3867: "PhoneBook::compNumber": нестандартный синтаксис; используйте "&", чтобы создать указатель на член
+C:\Users\1\source\repos\CHOOP_1\CHOOP_1\CHOOP_1.cpp(101,9): error C2672: "sort": не найдена соответствующая перегруженная функция
+C:\Users\1\source\repos\CHOOP_1\CHOOP_1\CHOOP_1.cpp(101,1): error C2780: void std::sort(_ExPo &&,_RanIt,_RanIt,_Pr) noexcept: требует аргументов: 4, имеется: 3
+E:\Programmes\Visual Studio 2019\Community\VC\Tools\MSVC\14.28.29910\include\algorithm(7525): message : см. объявление "std::sort"
+C:\Users\1\source\repos\CHOOP_1\CHOOP_1\CHOOP_1.cpp(101,1): error C2780: void std::sort(const _RanIt,const _RanIt): требует аргументов: 2, имеется: 3
+E:\Programmes\Visual Studio 2019\Community\VC\Tools\MSVC\14.28.29910\include\algorithm(7519): message : см. объявление "std::sort"
